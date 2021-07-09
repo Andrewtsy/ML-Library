@@ -1,1 +1,2 @@
-This is an ongoing Machine Learning library. I'm doing this more for my own educational purposes, but it has/will have simple components for neural networks, naive bayes classifiers, SVMs, etc.
+This is an ongoing Machine Learning library. I'm doing this mostly for my own educational purposes. 
+It has/will have simple components for neural networks, naive bayes classifiers, SVMs, etc.

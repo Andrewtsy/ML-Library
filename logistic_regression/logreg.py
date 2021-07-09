@@ -12,12 +12,12 @@ def scale(data, scaled_rows=False):
         data[:,i] = ((data[:,i] - np.mean(data[:,i]))/np.std(data[:,i]))
 
 # Plots singular feature vs output as specified
-def plot(x, y):
-    plt.xlabel(x[0])
-    plt.ylabel(x[1])
+def plot(x, y, xlabel, ylabel):
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.plot(x, y, 'bo')
     plt.show()
-
+    
 # Represents hypothesized linear function
 def f(x, constants):
     return np.matmul(x, constants)
