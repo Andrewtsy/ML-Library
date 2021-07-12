@@ -1,5 +1,7 @@
-# template layer
+# All other layers built on this
 class Layer:
+    """Template layer"""
+    
     def __init__(self):
         self.input = None
         self.output = None

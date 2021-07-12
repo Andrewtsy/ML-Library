@@ -6,6 +6,8 @@ from layers.vanilla_layer import Dense
 from layers.activation import ActivationLayer
 from models.models import Network
 
+# Sample script running the neural network on an AND gate task
+
 x_train = np.array([[[0,0]], [[0,1]], [[1,0]], [[1,1]]])
 y_train = np.array([[[0]], [[0]], [[0]], [[1]]])
 

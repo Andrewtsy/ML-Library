@@ -1,16 +1,21 @@
 class Network:
+    """Base class to create model"""
+    
     def __init__(self):
         self.layers = []
         self.loss = None
         self.loss_prime = None
-        
+    
+    # Adds a layer
     def add(self, layer):
         self.layers.append(layer)
-        
+    
+    # Specifies what loss function to use
     def use(self, loss, loss_prime):
         self.loss = loss
         self.loss_prime = loss_prime
     
+    # Predictions
     def predict(self, input_data):
         samples = len(input_data)
         result = []
@@ -22,7 +27,8 @@ class Network:
                 output = layer.forward_propagation(output)
             result.append(output)
         return result
-        
+    
+    # Trains model    
     def fit(self, x_train, y_train, epochs, learning_rate):
         samples = len(x_train)
         

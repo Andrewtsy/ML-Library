@@ -2,7 +2,7 @@ import numpy as np
 from .temp_layer import Layer
 
 class ActivationLayer(Layer):
-    # adds non-linearity to output of layers
+    """This layer adds non-linearity to output of layers"""
     def __init__(self, activation, activation_prime):
         self.activation = activation
         self.activation_prime = activation_prime
