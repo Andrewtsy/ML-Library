@@ -4,7 +4,6 @@ y = wx + b
 All calculations calculated with system of equations/quadratics (no gradient descent)
 """
 
-
 import math
 
 import numpy as np
