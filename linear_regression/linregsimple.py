@@ -38,7 +38,7 @@ def lineqmakersimp(x, y):
 def lineqmaker(x, y):
     """Returns systems of equations that represents the solutions to
     w and b in minimizing the MSE loss function.
-    This function does use numpy arrayss
+    This function does use numpy arrays
     """
     a_11 = (x*x).sum()
     a_12 = x.sum()
@@ -55,5 +55,5 @@ def linreg(x, y):
 
 def f(w, b, x):
     """Applies the linear regression model to predict y values for
-    an iterable of x values""""
-    return [w * i + b for in x]
+    an iterable of x values"""
+    return [w * i + b for i in x]
