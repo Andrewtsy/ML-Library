@@ -1,6 +1,6 @@
 import numpy as np
 
-from .linreg import best_line
+from .simple_linreg_2 import best_line
 from .functions import mse, mse_gradient, sigmoid, \
 bce, bce_gradient_b, bce_gradient_w
 from ..preprocessing.basic import shuffle, split_train_test, scale
@@ -10,7 +10,7 @@ class linear_regression:
     def __init__(self):
         pass
     
-    def fit_gd(self, x, y, r, epochs):
+    def fit_gd(self, x, y, r, epochs, la=0):
         k = x.shape[1]
         self.w = np.random.randn(k)
         self.b = 0
@@ -19,8 +19,8 @@ class linear_regression:
         self.J_list = np.empty(0, float)
         for i in range(epochs):
             y_pred = self.predictions(x, self.w, self.b)
-            self.w -= r * mse_gradient(x, y, y_pred)
-            self.b -= r * mse_gradient(x, y, y_pred)
+            self.w -= r * mse_gradient(y, y_pred, self.w, la)
+            self.b -= r * mse_gradient(y, y_pred, self.w, la)
             self.w_list = np.append(self.w_list, [self.w], axis=0)
             self.b_list = np.append(self.b_list, [self.b], axis=0)
             J = mse(y, y_pred)
@@ -45,7 +45,7 @@ class logistic_regression:
     def __init__(self):
         pass
     
-    def fit_gd(self, x, y, r, epochs):
+    def fit_gd(self, x, y, r, epochs, la=0):
         k = x.shape[1]
         self.w = 0.1 * np.random.randn(k)
         self.b = 0
@@ -54,8 +54,8 @@ class logistic_regression:
         self.J_list = np.empty(0, float)
         for i in range(epochs):
             y_pred = self.predictions(x, self.w, self.b)
-            self.w -= r * bce_gradient_w(x, y, y_pred)
-            self.b -= r * bce_gradient_b(x, y, y_pred)
+            self.w -= r * bce_gradient_w(x, y, y_pred, self.w, la)
+            self.b -= r * bce_gradient_b(x, y, y_pred, self.w, la)
             self.w_list = np.append(self.w_list, [self.w], axis=0)
             self.b_list = np.append(self.b_list, [self.b], axis=0)
             J = bce(y, y_pred)

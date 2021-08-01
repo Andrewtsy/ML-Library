@@ -12,3 +12,10 @@ def evaluation_metrics(y_pred, y):
     precision = true_pos / pred_pos
     f1 = 2 * (recall * precision) / (recall + precision)
     return accuracy, recall, precision, f1
+
+def multi_evaluation_metrics(y_pred, y):
+    y_pred = np.argmax(y_pred, axis=1)
+    correct = np.sum(y_pred == y)
+    predictions = len(y)
+    accuracy = correct / predictions
+    return accuracy
