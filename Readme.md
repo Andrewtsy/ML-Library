@@ -6,8 +6,8 @@ This is an ongoing Machine Learning library. I'm coding this for fun and for my 
 ---
 
 Resources used:
-	* Professor Guillermo Goldsztein's highly helpful lectures and guidance on machine learning topics
-	* Linear Regression
-		* [Towards Data Science] (https://towardsdatascience.com/coding-linear-regression-from-scratch-c42ec079902)
-	* Neural Networks
-		* [Towards Data Science] (https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65)
+* Professor Guillermo Goldsztein's highly helpful lectures and guidance on machine learning topics
+* Linear Regression
+	* [Towards Data Science](https://towardsdatascience.com/coding-linear-regression-from-scratch-c42ec079902)
+* Neural Networks
+	* [Towards Data Science](https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65)
